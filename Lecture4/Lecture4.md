@@ -93,6 +93,8 @@ int main(){
 ```
 We will encounter an error because the `result` variable is declared _within_ the `sum` function. This means it has **local scope**, and is only accessible _inside_ the function's body.
 Variables declared within a function are not accessible from outside that function. This concept is known as **variable scoping**.
+#### Scope :
+In programming, **scope** refers to the region of a program where a particular variable or function can be accessed and used.
 #### Global scope
 Global scope represents the top-level scope of a script file. Any variable or constant created in the function and constant section (outside the `main` function or any other specific function) belongs to this scope. These are referred to as **global variables**.
 Global variables can be accessed and used by any function or block of code within the script.
@@ -208,7 +210,7 @@ int main(){
 	return 0;
 }
 ```
-![](./attachments/image2.png)
+![](../attachments/image2.png)
 #### Remarque
 If we are not careful enough with recursive functions, we can end up creating a function that calls itself repeatedly. This can lead to a stack overflow error, causing the program to crash
 ### Higher-Order Functions :
@@ -294,7 +296,7 @@ int main(int argc, char *argv[]){
 }
 ```
 We save this code as `greeting.c`. Then, we compile it. After compilation, we run the program as follows:
-![](./attachments/image3.png)
+![](../attachments/image3.png)
 The compiled result file is `greeting.out`. We can then run it and provide command-line arguments, such as "Ali" and "Cat". Our program will read these arguments and greet them accordingly.
 ### Functional programming :
 
@@ -359,7 +361,7 @@ int main(){
 
 ## Tasks :
 ### Task 1 :
-Write a recursive function in C that takes a decimal number as input and prints its binary representation.
+Write a recursive function in C that takes a decimal number as input and return it as binary number.
 ### Task 2 :
 Create a header file that contains the following functions: 
 - **Function** to find the largest element in an array.

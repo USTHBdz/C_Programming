@@ -6,16 +6,15 @@ int main(){
     printf("Enter number n : ");
     scanf("%d", &n);
     for(int i = 2 ; i <= n; i++){
-        k = ceil(sqrt(i));
-        for (int j = 2; j <= k; j++){
-            if(i % j == 0 && j != k){
+        k = floor(sqrt(i));
+        for (int j = k; j > 0; j--){
+            if(i % j == 0 && j != 1){
                 break;
-            }else if (j == k){
+            }else if (j == 1){
                 printf("%i\n", i);
             }
         }
 
     }
-    
     return 0;
 }
