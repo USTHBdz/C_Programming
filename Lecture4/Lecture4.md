@@ -332,11 +332,24 @@ Header files are special files used to store function declarations and type defi
 
 ### Creating a Header File :
 
-To create a header file:
-
-1. Create a new file.
-2. Add the function declarations or type definitions we want to share.
-3. Save the file with a `.h` extension.
+1. **Create a New File:** Create a new file with the desired name and the `.h` extension (e.g., `my_header.h`).
+2. **Add Include Guards:**
+    - At the top, add `#ifndef MY_HEADER_H`
+    - On the next line, add `#define MY_HEADER_H`
+    - At the end of the file, add `#endif // MY_HEADER_H`
+3. **Add Declarations:** Inside the include guards, add:
+    - **Function Declarations:** Declare function prototypes (signatures) without their implementations.
+    - **Structure Definitions:** Define the structure of data.
+    - **Type Definitions:** Create aliases for existing data types.
+    - **Macros:** Define macros for code reusability and readability.
+    - **Include Other Headers:** Include other necessary header files using `#include`.
+4. **Save the File:** Save the file with the `.h` extension.
+**Explanation:**
+- **Include Guards:**
+    - `#ifndef MY_HEADER_H`: This checks if a symbol named `MY_HEADER_H` is not defined. If not, it proceeds.
+    - `#define MY_HEADER_H`: This defines the symbol `MY_HEADER_H`.
+    - `#endif `: This marks the end of the conditional block.
+    - These lines together ensure that the contents of the header file are included only once in a given source file, preventing multiple definitions of the same entities and avoiding 
 
 ### Using a Header File in Our Script :
 
@@ -355,7 +368,7 @@ Then, we can create a separate script, include `"myheader.h"` in it, and use the
 
 int main(){
 	int a = 4, b = 5, r;
-	r = sum(a, b)
+	r = sum(a, b);
 	printf("Result of %d + %d is %d", a, b, r);
 	return 0;
 }
