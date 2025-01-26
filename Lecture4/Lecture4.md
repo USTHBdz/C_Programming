@@ -300,6 +300,77 @@ We save this code as `greeting.c`. Then, we compile it. After compilation, we ru
 
 ![](./attachments/image3.png)
 The compiled result file is `greeting.out`. We can then run it and provide command-line arguments, such as "Ali" and "Cat". Our program will read these arguments and greet them accordingly.
+### Function prototyping :
+When working on larger and more complex programs, we often create numerous functions. This can sometimes make it difficult to read the main function, as we may need to scroll through many function definitions to reach it. The main function, often considered the core of the program, should be easily accessible for understanding the overall program flow.
+Function prototyping provides an elegant solution. By declaring function prototypes at the beginning of the file, we simply list the functions we will be using. These prototypes include the function's return type, name, and the data types of its parameters, but not the actual function body.
+After the main function, we then provide the complete function definitions, including their implementations. This approach significantly improves code readability and maintainability by keeping the main function concise and providing a clear overview of the program's structure.
+#### Example:
+```
+#include <stdio.h>
+
+float add(float a, float b);
+float divide(float a, float b);
+float multiply(float a, float b;
+float subtract(float a, float b);
+float power(float a, float b);
+float calculate(float a, float b ,float (* fun)(float a, float b));
+int main(){
+	float n1, n2, result;
+	char op;
+	printf("Enter the first number : ");
+	scanf("%f", &n1);
+	printf("Enter the second number : ");
+	scanf("%f", &n2);
+	printf("Enter the operator : ");
+	scanf("%s", &op);
+	switch(op){
+		case '+':
+			result = calculate(n1, n2, add);
+			break;
+		case '-':
+			result = calculate(n1, n2, subtract);
+			break;
+		case '*':
+			result = calculate(n1, n2, multiply);
+			break;
+		case '/':
+			result = calculate(n1, n2, divide);
+			break;
+		case '^':
+			result = calculate(n1, n2, power);
+			break;
+		default:
+			printf("Invalid operator");
+			return 0;
+		break;
+	}
+	printf("The result of %f %c %f is %f", n1, op, n2, result);
+	return 0;
+}
+float add(float a, float b){
+	return a + b;
+}
+float divide(float a, float b){
+	return a / b;
+}
+float multiply(float a, float b){
+	return a * b;
+}
+float subtract(float a, float b){
+	return a - b;
+}
+float power(float a, float b){
+	float p = 1;
+	for (int i = 0; i < b; i++){
+		p *= a;
+	}
+	return p;
+}
+float calculate(float a, float b ,float (* fun)(float a, float b)){
+	return fun(a,b);
+}
+
+```
 ### Functional programming :
 
 Functional programming represent the art of solving our problems by dividing the main problem to small sets of sub problems and creating function for each one of them.  
@@ -357,9 +428,12 @@ To use the functions or types from a header file in our script, we include the h
 
 First, create a header file named `myheader.h`. Inside this file, define the function `sum`.
 ```
+#ifndef my_header
+#define my_header
 int sum(int a, int b){
 	return a + b;
 }
+#endif
 ```
 Then, we can create a separate script, include `"myheader.h"` in it, and use the `sum` function as needed.
 ```
