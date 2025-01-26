@@ -20,8 +20,8 @@ float cub(float n){
 	return n * n * n;
 }
 ```
-Here, we can see that our function has `float` as its return type. This means that after executing the function, it will return a `float` value as the result. The function is named `cub`, followed by `()` containing `float n`. This indicates that the function takes a single argument, which is a float number.
-Inside the `{}`, we see the instruction `return n * n * n;`. This means that the function performs the operation `n * n * n` and then returns the result.
+Here, we can see that our function has `float` as its return type. This means that after executing the function, it will return a `float` value as the result. The function is named `cub`, followed by `()` containing `float n`. This indicates that the function takes a single argument, which is a float number.  
+Inside the `{}`, we see the instruction `return n * n * n;`. This means that the function performs the operation `n * n * n` and then returns the result.  
 To use the function, we simply call it by its name, followed by `()` containing the argument we want to pass to the function. If the function returns a result, we can store that result in a variable of the same type as the function's return type.
 #### Example :
 ```
@@ -99,7 +99,7 @@ In programming, **scope** refers to the region of a program where a particular v
 Global scope represents the top-level scope of a script file. Any variable or constant created in the function and constant section (outside the `main` function or any other specific function) belongs to this scope. These are referred to as **global variables**.  
 Global variables can be accessed and used by any function or block of code within the script.
 #### Local scope
-Local scope means a variable can only be seen and used inside the function where it is created, if a variable is made inside a function, it’s called a **local variable**.  
+Local scope means a variable can only be seen and used inside the function where it is created, if a variable is made inside a function, it’s called a **local variable**. 
 In the previous example, the variable ``result`` was created inside the ``sum`` function. This means ``result`` is a local variable and can only be used inside that function.
 
 ###  Passing Arguments by Reference in Functions :
@@ -153,7 +153,7 @@ Some special functions don't have a fixed number of arguments they can take. For
 - **Initialize the pointer using** `va_start(ptr, count)`:
 	 - ``ptr`` represent the pointer.
 	 - ``count`` represent how many arguments we have.
-- **Access arguments using `va_arg(ptr, type)`:** It  retrieves the current argument, advances the pointer to the next argument, and returns the retrieved value. The `type` argument specifies the data type of the expected argument.
+- **Access arguments using `va_arg(ptr, type)`:** It  retrieves the current argument, advances the pointer to the next argument, and returns the retrieved value. The `type` argument specifies the data type of the expected argument.  
 - **After processing all arguments, use `va_end(ptr)`:** This macro cleans up the internal state associated with the `va_list` pointer..
 
 ```
