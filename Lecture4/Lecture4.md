@@ -210,7 +210,8 @@ int main(){
 	return 0;
 }
 ```
-![](../attachments/image2.png)
+
+![](./attachments/image2.png)
 #### Remarque
 If we are not careful enough with recursive functions, we can end up creating a function that calls itself repeatedly. This can lead to a stack overflow error, causing the program to crash
 ### Higher-Order Functions :
@@ -295,8 +296,9 @@ int main(int argc, char *argv[]){
 	return 0;
 }
 ```
-We save this code as `greeting.c`. Then, we compile it. After compilation, we run the program as follows:
-![](../attachments/image3.png)
+We save this code as `greeting.c`. Then, we compile it. After compilation, we run the program as follows:  
+
+![](./attachments/image3.png)
 The compiled result file is `greeting.out`. We can then run it and provide command-line arguments, such as "Ali" and "Cat". Our program will read these arguments and greet them accordingly.
 ### Functional programming :
 
