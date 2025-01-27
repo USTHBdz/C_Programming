@@ -8,7 +8,25 @@ unsigned bullet;
 struct Bullets* next;
 }Bullets;
 
+void charge(Bullets **bul);
+void fire(Bullets **bul);
+void free_magazine(Bullets* bul);
 
+int main(){
+	Bullets* magazine;
+	magazine = calloc(1, sizeof(Bullets));
+	magazine->bullet = 0;
+	magazine->next = NULL;
+	charge(&magazine);
+	charge(&magazine);
+	fire(&magazine);
+	charge(&magazine);
+	fire(&magazine);
+	fire(&magazine);
+	fire(&magazine);
+	free_magazine(magazine);
+	return 0;
+}
 void charge(Bullets **bul){
     if ((*bul)->bullet >= MAX_BULLETS){
       printf("Magazine is full!\n");  
@@ -41,19 +59,4 @@ if (bul->next == NULL && bul->bullet == 0){
     free_magazine(bul->next);
     free(bul);
     return;
-}
-int main(){
-	Bullets* magazine;
-	magazine = calloc(1, sizeof(Bullets));
-	magazine->bullet = 0;
-	magazine->next = NULL;
-	charge(&magazine);
-	charge(&magazine);
-	fire(&magazine);
-	charge(&magazine);
-	fire(&magazine);
-	fire(&magazine);
-	fire(&magazine);
-	free_magazine(magazine);
-	return 0;
 }
