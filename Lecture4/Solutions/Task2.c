@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "array_funcs.h"
 
-
 int main(){
     int size;
     int *arr;
