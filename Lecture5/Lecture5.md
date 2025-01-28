@@ -168,10 +168,10 @@ Binary Search Trees (BSTs) are a data structure used to store sorted data elemen
     - A left pointer: Points to the node containing a smaller value.
     - A right pointer: Points to the node containing a larger value.
 The head of the Binary Search Trees called root node  
-![](../attachments/binary-search-tree1.png)  
+![](./attachments/binary-search-tree1.png)  
 #### Example :
 We will make this Binray Search Tree  
-![](../attachments/bts.png)  
+![](./attachments/bts.png)  
 ```
 #include <stdio.h>
 #include <stdlib.h>
